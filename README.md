@@ -200,14 +200,15 @@ To check minikube version on ubuntu
 
  You will be guided to: 
 
-### Install MongoDB Enterprise Operator using HELM.
-### Deploy Ops Manager with Kubernetes Secret and ops-manager.yaml.
-### Monitor Ops Manager provisioning with kubectl get om.
-### Access Ops Manager portal.
-### Configure Ops Manager, create an Organization, and generate an API Key.
-### Deploy a MongoDB Replica Set with secret and configMap.
-### Check provisioning and apply an upgrade.
-### Connect and interact with Mongosh.
+### 7.1 Install MongoDB Enterprise Operator using HELM.
+
+### 7.2 Deploy Ops Manager with Kubernetes Secret and ops-manager.yaml.
+### 7.3 Monitor Ops Manager provisioning with kubectl get om.
+### 7.4 Access Ops Manager portal.
+### 7.5 Configure Ops Manager, create an Organization, and generate an API Key.
+### 7.6 Deploy a MongoDB Replica Set with secret and configMap.
+### 7.7 Check provisioning and apply an upgrade.
+### 7.8 Connect and interact with Mongosh.
 
 <img width="997" alt="image" src="https://github.com/cozypet/MongoDB_enterprisek8sOperator_OpsManager/assets/7107896/67615b14-a687-4c29-9f6d-6691d995bd8d">
 
