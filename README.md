@@ -194,3 +194,10 @@ To check minikube version on ubuntu
  ``` minikube version ``` 
 
  ``` minikube start --network-plugin=cni --cni=calico ``` 
+
+ ## 7. install ops manager with MongoDB k8s operator 
+ From here, you can follow the steps from [Natural0rder's process ](https://github.com/Natural0rder/mongodb-k8s#deploy-mongodb-kubernetes-enterprise-operator)https://github.com/Natural0rder/mongodb-k8s#deploy-mongodb-kubernetes-enterprise-operator
+<img width="997" alt="image" src="https://github.com/cozypet/MongoDB_enterprisek8sOperator_OpsManager/assets/7107896/67615b14-a687-4c29-9f6d-6691d995bd8d">
+
+ 
+ 
