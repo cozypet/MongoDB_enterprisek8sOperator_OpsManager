@@ -1,5 +1,14 @@
 # MongoDB_enterprisek8sOperator_OpsManager
 
+
+
+References: 
+https://github.com/Natural0rder/mongodb-k8s
+https://www.mongodb.com/docs/kubernetes-operator/master/kind-quick-start/
+https://www.mongodb.com/blog/post/running-mongodb-ops-manager-in-kubernetes
+https://www.mongodb.com/blog/post/tutorial-part-2-ops-manager-in-kubernetes
+https://www.fosstechnix.com/how-to-install-minikube-on-ubuntu-22-04-lts/
+
 -----
 
 ## Setup your EC2
