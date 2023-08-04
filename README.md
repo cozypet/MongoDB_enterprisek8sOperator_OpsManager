@@ -16,88 +16,110 @@ Configure volume size to 30 GB
 ## Update the system packages on Ubuntu 22.04 LTS AWS EC2
 
 ``` sudo apt update ```
-#1.Install kubectl on Ubuntu 22.04 LTS
+
+## 1.Install kubectl on Ubuntu 22.04 LTS
+
 Download kubectl binary with curl on Ubuntu using below command
 
-curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
-Make the kubectl binary executable
+``` curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl ```
 
-chmod +x ./kubectl
+Make the kubectl binary executable 
+
+``` chmod +x ./kubectl ```
+
 Move kubectl to /usr/local/bin/kubectl directory
 
-sudo mv ./kubectl /usr/local/bin/kubectl
-To check kubectl version on Ubuntu
+``` sudo mv ./kubectl /usr/local/bin/kubectl ``` 
 
-kubectl version
-Output:
+To check Kubectl version on Ubuntu
 
-Client Version: version.Info{Major:"1", Minor:"22", GitVersion:"v1.22.4", GitCommit:"b695d79d4f967c403a96986f1750a35eb75e75f1", GitTreeState:"clean", BuildDate:"2021-11-17T15:48:33Z", GoVersion:"go1.16.10", Compiler:"gc", Platform:"linux/amd64"}
-#2.Install Docker on Ubuntu 22.04 LTS
+
+ ``` kubectl version ``` 
+ 
+## 2.Install Docker on Ubuntu 22.04 LTS
+
 Install below packages before installing docker, you can use official docker site
 
-sudo apt-get install  ca-certificates curl gnupg lsb-release
+ ``` sudo apt-get install  ca-certificates curl gnupg lsb-release  ``` 
+
 Add Docker official GPG Key
 
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+ ``` sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg ``` 
+
 Setup Docker repository using below command
 
-echo \
+ ``` echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null ``` 
+
 Update the package to take effect
 
-sudo apt-get update
+ ``` sudo apt-get update ``` 
+
 Install Docker on Ubuntu 22.04 LTS using below command
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+ ``` sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin ``` 
+
 To check docker service status on Ubuntu
 
-sudo systemctl status docker
+ ``` sudo systemctl status docker ``` 
+
 Create group named docker
 
-sudo groupadd docker
+ ``` sudo groupadd docker ``` 
+
 Configure to Run docker without sudo permission
 
-sudo usermod -aG docker $USER && newgrp docker
+ ``` sudo usermod -aG docker $USER && newgrp docker ``` 
+
 To enable docker service at system startup
 
-sudo systemctl enable docker
+ ``` sudo systemctl enable docker ```
+
 To check status of docker service
 
-sudo systemctl status docker
+ ``` sudo systemctl status docker ``` 
+
 To start/stop docker service
 
-sudo systemctl start/stop docker
-#3.Install cri-dockerd on Ubuntu 22.04 LTS
+ ``` sudo systemctl start/stop docker ``` 
+## 3.Install cri-dockerd on Ubuntu 22.04 LTS
+
 The default network plugin for cri-dockerd is set to cni on Linux/Ubuntu for new Kubernetes version as you can follow GitHub Official repo for same
 
 Clone the below git repo
 
-git clone https://github.com/Mirantis/cri-dockerd.git
+ ``` git clone https://github.com/Mirantis/cri-dockerd.git ``` 
+
 To install, on a Linux system that uses systemd, and already has Docker Engine installed
 
-wget https://storage.googleapis.com/golang/getgo/installer_linux
+ ``` wget https://storage.googleapis.com/golang/getgo/installer_linux
 chmod +x ./installer_linux
-./installer_linux
-source ~/.bash_profile
-cd cri-dockerd
+./installer_linux ```
+
+ ``` source ~/.bash_profile ``` 
+ ``` cd cri-dockerd
 mkdir bin
-go build -o bin/cri-dockerd
+go build -o bin/cri-dockerd ```
+
 Note: Please wait above command takes some time to complete.
 
-mkdir -p /usr/local/bin
-sudo install -o root -g root -m 0755 bin/cri-dockerd /usr/local/bin/cri-dockerd
-sudo cp -a packaging/systemd/* /etc/systemd/system
-sudo sed -i -e 's,/usr/bin/cri-dockerd,/usr/local/bin/cri-dockerd,' /etc/systemd/system/cri-docker.service
-sudo systemctl daemon-reload
-sudo systemctl enable cri-docker.service
-sudo systemctl enable --now cri-docker.socket
-#4.Install conntrack package on Ubuntu 22.04 LTS
+ ``` mkdir -p /usr/local/bin
+sudo install -o root -g root -m 0755 bin/cri-dockerd /usr/local/bin/cri-dockerd ``` 
+
+ ``` sudo cp -a packaging/systemd/* /etc/systemd/system ``` 
+ ``` sudo sed -i -e 's,/usr/bin/cri-dockerd,/usr/local/bin/cri-dockerd,' /etc/systemd/system/cri-docker.service ``` 
+ ``` sudo systemctl daemon-reload ``` 
+ ``` sudo systemctl enable cri-docker.service ``` 
+ ``` sudo systemctl enable --now cri-docker.socket ```
+
+## 4.Install conntrack package on Ubuntu 22.04 LTS
 Install conntrack using apt for minikube on Ubuntu 22.04 LTS
 
-sudo apt-get install -y conntrack
-#5.Install crictl package on Ubuntu 22.04 LTS
+ ``` sudo apt-get install -y conntrack ```
+
+## 5.Install crictl package on Ubuntu 22.04 LTS
 Install crictl: CLI for kubelet CRI on Ubuntu using below commands follow official crictl GitHub page
 
 VERSION="v1.24.2"
