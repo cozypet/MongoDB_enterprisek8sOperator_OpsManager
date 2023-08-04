@@ -20,7 +20,7 @@ How to Install Minikube on Ubuntu 22.04 LTS: https://www.fosstechnix.com/how-to-
 
 -----
 
-## Setup your EC2
+## 0. Setup your EC2
 
 Choose your machine
 
@@ -33,7 +33,7 @@ Configure volume size to 30 GB
 ![image](https://github.com/cozypet/MongoDB_enterprisek8sOperator_OpsManager/assets/7107896/66faf69a-e851-430b-98e8-576e51566fbe)
 
 
-## Update the system packages on Ubuntu 22.04 LTS AWS EC2
+Update the system packages on Ubuntu 22.04 LTS AWS EC2
 
 ``` sudo apt update ```
 
