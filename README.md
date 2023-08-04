@@ -1,13 +1,22 @@
 # MongoDB_enterprisek8sOperator_OpsManager
 
+This repository provides setup instructions for deploying MongoDB Enterprise Kubernetes Operator with Ops Manager. It includes commands to install required tools and dependencies on Ubuntu 22.04 LTS AWS EC2. The setup also involves installing and configuring Docker, cri-dockerd, conntrack, and crictl for Minikube, along with Minikube itself with Calico as the network plugin.
+
+References:
+
+The best guide I have found on how to install Mongodb k8s enterprise operator: https://github.com/Natural0rder/mongodb-k8s
+
+MongoDB Kubernetes Operator Quick Start: https://www.mongodb.com/docs/kubernetes-operator/master/kind-quick-start/
+
+Running MongoDB Ops Manager in Kubernetes: https://www.mongodb.com/blog/post/running-mongodb-ops-manager-in-kubernetes
+
+Tutorial Part 2: Ops Manager in Kubernetes: https://www.mongodb.com/blog/post/tutorial-part-2-ops-manager-in-kubernetes
+
+How to Install Minikube on Ubuntu 22.04 LTS: https://www.fosstechnix.com/how-to-install-minikube-on-ubuntu-22-04-lts/
 
 
-References: 
-https://github.com/Natural0rder/mongodb-k8s
-https://www.mongodb.com/docs/kubernetes-operator/master/kind-quick-start/
-https://www.mongodb.com/blog/post/running-mongodb-ops-manager-in-kubernetes
-https://www.mongodb.com/blog/post/tutorial-part-2-ops-manager-in-kubernetes
-https://www.fosstechnix.com/how-to-install-minikube-on-ubuntu-22-04-lts/
+
+
 
 -----
 
